@@ -67,6 +67,13 @@
             width: 100%;
             height: 100%;
         }
+
+        .result, input[type=text]{
+            width: 50%;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
     </style>
 </head>
 
@@ -76,7 +83,7 @@
     </header>
     
     <main>
-        <form>
+        <form method="post" action="main.php">
             <h3>Calculadora em PHP</h3>
             <fieldset>
                 <div class="values">
@@ -91,20 +98,25 @@
 
                 <div class="operacoes">
                     <label for="radio-soma">Soma</label>
-                    <input type="radio" name="radio-operacoes" id="radio-soma" checked>
+                    <input type="radio" name="radio-operacoes" value="radio-soma" checked>
                     
                     <label for="radio-sub">Subtração</label>
-                    <input type="radio" name="radio-operacoes" id="radio-sub">
+                    <input type="radio" name="radio-operacoes" value="radio-sub">
                     
                     <label for="radio-mult">Multiplicação</label>
-                    <input type="radio" name="radio-operacoes" id="radio-mult">
+                    <input type="radio" name="radio-operacoes" value="radio-mult">
                     
                     <label for="radio-div">Divisão</label>
-                    <input type="radio" name="radio-operacoes" id="radio-div">   
+                    <input type="radio" name="radio-operacoes" value="radio-div">   
+                </div>
+
+                <div class="result">
+                    <label for="txt-result">O resultado é:</label>
+                    <input type="text" name="txt-result" id="txt-result" disabled>
                 </div>
 
                 <div class="btn">
-                    <input type="button" value="Calcular">
+                    <input type="submit" value="Calcular">
                     <input type="reset" value="Limpar">
                 </div>
             </fieldset>
